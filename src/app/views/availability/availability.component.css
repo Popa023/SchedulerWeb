@@ -1,0 +1,11 @@
+table {
+  margin: auto;
+  width: 90%;
+}
+.log_out_button{
+  float: right;
+}
+.unavailable-form {
+  padding-left: 80px;
+}
+
