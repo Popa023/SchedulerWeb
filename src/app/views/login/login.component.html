@@ -1,14 +1,30 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Email*</mat-label>
-    <input matInput placeholder="Email*" name="emailTextField" id="emailTextField" [(ngModel)]="emailTextField">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-label>Password*</mat-label>
-    <input matInput type="password" placeholder="Password*" name="passwordTextField" [(ngModel)]="passwordTextField" >
-  </mat-form-field>
-  <button mat-raised-button (click)="login(emailTextField,passwordTextField)" color="accent">Login</button>
-  <button mat-raised-button (click)="signup(emailTextField, passwordTextField)" color="warn">Sign Up</button>
+<form class="login">
+  <div class="login_form">
+    <mat-slide-toggle name="adminSlider" [(ngModel)]="adminSlider">Admin Account</mat-slide-toggle>
+    <br><br>
+    <mat-form-field class="name_form_field">
+      <mat-label>Name*</mat-label>
+      <input matInput placeholder="Name*" name="nameTextField" id="nameTextField" [(ngModel)]="username">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="email_form_field">
+      <mat-label>Email*</mat-label>
+      <input matInput placeholder="Email*" name="emailTextField" id="emailTextField" [(ngModel)]="emailTextField">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="password_form_field">
+      <mat-label>Password*</mat-label>
+      <input matInput type="password" placeholder="Password*" name="passwordTextField" [(ngModel)]="passwordTextField" >
+    </mat-form-field>
+    <br>
+    <mat-form-field class="admin_password" *ngIf="adminSlider">
+      <mat-label>Admin Password*</mat-label>
+      <input matInput type="password" placeholder="Admin Password*" name="adminPasswordTextField" [(ngModel)]="adminPassword" >
+    </mat-form-field>
+    <br>
+    <button mat-raised-button (click)="login(emailTextField,passwordTextField)" color="accent">Login</button>
+    <br><br>
+    <button mat-raised-button (click)="signup(emailTextField, passwordTextField, username, adminPassword)" color="warn">Sign Up</button>
+  </div>
 </form>
 

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
@@ -17,6 +17,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
+import {Ng5SliderModule} from 'ng5-slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -24,21 +27,25 @@ import {MatSelectModule} from '@angular/material/select';
     LoginComponent,
     AvailabilityComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MatSliderModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatToolbarModule,
-        MatCheckboxModule,
-        MatTableModule,
-        HttpClientModule,
-        MatSelectModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatCheckboxModule,
+    MatTableModule,
+    HttpClientModule,
+    MatSelectModule,
+    Ng5SliderModule,
+    MatSlideToggleModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
   ],

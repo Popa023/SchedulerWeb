@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {from, Observable, ObservedValueOf, throwError} from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import {AcademicEvent} from '../model/event';
+import {Teacher} from '../model/teacher';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,13 @@ export class CommunicationService {
 
   updateEvent(id: number, event: AcademicEvent): Observable<AcademicEvent> {
     return this.http.put<AcademicEvent>(this.configUrl + 'events/' + id, event, this.httpOptions);
+  }
+
+  createTeacher(teacher: Teacher, adminPassword = 'User'): Observable<Teacher> {
+    return this.http.post<Teacher>(this.configUrl + 'teachers/' + adminPassword, teacher);
+  }
+
+  getTeachers(): Observable<Teacher[]> {
+    return this.http.get<Teacher[]>(this.configUrl + 'teachers', this.httpOptions);
   }
 }

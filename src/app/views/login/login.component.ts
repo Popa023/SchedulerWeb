@@ -10,6 +10,9 @@ import { FirebaseAuthService} from '../../logic/firebase-auth.service';
 export class LoginComponent implements OnInit {
   emailTextField: any;
   passwordTextField: any;
+  adminSlider = false;
+  adminPassword: any;
+  username: any;
   constructor(
     private firebaseAuthService: FirebaseAuthService,
     // private router: Router
@@ -20,8 +23,8 @@ export class LoginComponent implements OnInit {
   login(email, password): void {
     this.firebaseAuthService.login(email, password);
   }
-  signup(email, password): void {
-    this.firebaseAuthService.signup(email, password);
+  signup(email, password, username, adminPassword): void {
+    this.firebaseAuthService.signup(email, password, username, adminPassword);
   }
   getUser(){
     this.firebaseAuthService.getUser();

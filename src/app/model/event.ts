@@ -1,20 +1,24 @@
 import {Time} from '@angular/common';
-import {AcademicActicity} from './academic-acticity';
-import {Classroom} from './classroom';
-import {Teacher} from './teacher';
 
 export class AcademicEvent {
 
   id: number;
+  name: string;
+  teacherId: number;
+  classroomId: number;
+  groupId: number;
+  lessonId: number;
   day: string;
-  academicActivity: AcademicActicity;
-  start: string;
-  length: string;
-  classroom: Classroom;
-  teacher: Teacher;
+  start: Time;
+  length: Time;
 
-  constructor(id: number, day: string, start: string, length: string) {
+  constructor(id, name, teacherId, classroomId, groupId, lessonId, day, start, length) {
     this.id = id;
+    this.name = name;
+    this.teacherId = teacherId;
+    this.classroomId = classroomId;
+    this.groupId = groupId;
+    this.lessonId = lessonId;
     this.day = day;
     this.start = start;
     this.length = length;
